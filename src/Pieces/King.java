@@ -6,7 +6,15 @@ import java.util.ArrayList;
 /**
  * Created by Cillian Mc Neill on 19/09/2016.
  */
-public class King implements ChessPiece {
+public class King implements ChessPiece
+{
+
+    int type;
+    public King(int type)
+    {
+        this.type = type;
+    }
+
     @Override
     public ArrayList<Point> calculateMoves(Point position) {
         ArrayList<Point> possibleMoves = new ArrayList<>();

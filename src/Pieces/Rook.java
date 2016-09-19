@@ -9,7 +9,11 @@ import java.util.ArrayList;
 public class Rook implements ChessPiece {
 
 
-    public Rook() {}
+    int type;
+    public Rook(int type)
+    {
+        this.type = type;
+    }
 
     public ArrayList<Point> calculateMoves(Point position)
     {

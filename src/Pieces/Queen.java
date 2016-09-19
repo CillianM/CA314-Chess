@@ -8,7 +8,11 @@ import java.util.ArrayList;
  */
 public class Queen implements ChessPiece{
 
-
+    int type;
+    public Queen(int type)
+    {
+        this.type = type;
+    }
     @Override
     public ArrayList<Point> calculateMoves(Point position) {
         ArrayList<Point> possibleMoves = new ArrayList<>();

@@ -9,6 +9,11 @@ import java.util.ArrayList;
 public class Pawn implements ChessPiece {
 
     int moveCount = 0;
+    int type;
+    public Pawn(int type)
+    {
+        this.type = type;
+    }
 
     @Override
     public ArrayList<Point> calculateMoves(Point position) {

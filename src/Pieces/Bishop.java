@@ -8,6 +8,11 @@ import java.util.ArrayList;
  */
 public class Bishop implements ChessPiece {
 
+    int type;
+    public Bishop(int type)
+    {
+        this.type = type;
+    }
     @Override
     public int returnPointValue() {
 
