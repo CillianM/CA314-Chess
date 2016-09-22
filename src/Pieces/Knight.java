@@ -7,11 +7,17 @@ import java.util.ArrayList;
  * Created by Cillian Mc Neill on 19/09/2016.
  */
 public class Knight implements ChessPiece {
-    int type;
-    public Knight(int type)
+    int id;
+    public Knight(int id)
     {
-        this.type = type;
+        this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Knight " + id;
+    }
+
     @Override
     public ArrayList<Point> calculateMoves(Point position) {
         ArrayList<Point> possibleMoves = new ArrayList<>();

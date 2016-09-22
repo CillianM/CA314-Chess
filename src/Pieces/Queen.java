@@ -8,11 +8,17 @@ import java.util.ArrayList;
  */
 public class Queen implements ChessPiece{
 
-    int type;
-    public Queen(int type)
+    int id;
+    public Queen(int id)
     {
-        this.type = type;
+        this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Queen " + id;
+    }
+
     @Override
     public ArrayList<Point> calculateMoves(Point position) {
         ArrayList<Point> possibleMoves = new ArrayList<>();

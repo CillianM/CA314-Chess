@@ -8,11 +8,17 @@ import java.util.ArrayList;
  */
 public class Bishop implements ChessPiece {
 
-    int type;
-    public Bishop(int type)
+    int id;
+    public Bishop(int id)
     {
-        this.type = type;
+        this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Bishop " + id;
+    }
+
     @Override
     public int returnPointValue() {
 

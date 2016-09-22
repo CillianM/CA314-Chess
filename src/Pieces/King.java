@@ -9,10 +9,15 @@ import java.util.ArrayList;
 public class King implements ChessPiece
 {
 
-    int type;
-    public King(int type)
+    int id;
+    public King(int id)
     {
-        this.type = type;
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "King " + id;
     }
 
     @Override

@@ -15,9 +15,18 @@ public class BoardSquare {
     public BoardSquare(int x,int y)
     {
         position = new Point(x,y);
+        currentPiece = null;
     }
 
-    public BoardSquare(int x,int y,ChessPiece piece)
+    @Override
+    public String toString() {
+        if(piecePresent())
+            return "("+position.x+","+position.y+") "+ currentPiece.toString();
+        else
+            return "("+position.x+","+position.y+") NULL";
+    }
+
+    public BoardSquare(int x, int y, ChessPiece piece)
     {
         position = new Point(x,y);
         currentPiece = piece;

@@ -9,10 +9,15 @@ import java.util.ArrayList;
 public class Pawn implements ChessPiece {
 
     int moveCount = 0;
-    int type;
-    public Pawn(int type)
+    int id;
+    public Pawn(int id)
     {
-        this.type = type;
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Pawn " + id;
     }
 
     @Override

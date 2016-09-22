@@ -9,10 +9,15 @@ import java.util.ArrayList;
 public class Rook implements ChessPiece {
 
 
-    int type;
-    public Rook(int type)
+    int id;
+    public Rook(int id)
     {
-        this.type = type;
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Rook " + id;
     }
 
     public ArrayList<Point> calculateMoves(Point position)
