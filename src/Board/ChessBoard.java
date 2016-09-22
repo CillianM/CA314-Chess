@@ -11,13 +11,13 @@ import java.util.ArrayList;
 public class ChessBoard {
 
 
-    BoardSquare [] playingBoard;
+    BoardSquare [][] playingBoard;
     ChessPiece [] WhitePieces;
     ChessPiece [] BlackPieces;
 
     public ChessBoard()
     {
-        playingBoard = new BoardSquare[64];
+        playingBoard = new BoardSquare[8][8];
         constructBoard();
     }
 
@@ -29,16 +29,19 @@ public class ChessBoard {
 
     public void test()
     {
-        for(int i = 0; i < 64; i ++)
+        for(int y = 0; y < 8; y ++)
         {
-            System.out.println(playingBoard[i].toString());
+            for(int x = 0; x < 8; x++)
+            {
+                System.out.print(x+","+y+":" + playingBoard[x][y].toString() + "  ");
+            }
+            System.out.println("");
         }
     }
 
     public void constructBoard()
     {
         constructPieces();
-        int currentSquare = 0;
         int blackPieceCounter = 15;
         int whitePieceCounter = 0;
         for(int y = 0; y < 8; y++)
@@ -47,19 +50,18 @@ public class ChessBoard {
             {
                 if(y < 2)
                 {
-                    playingBoard[currentSquare] = new BoardSquare(x,y,BlackPieces[blackPieceCounter]);
+                    playingBoard[x][y] = new BoardSquare(x,y,BlackPieces[blackPieceCounter]);
                     blackPieceCounter--;
                 }
                 else if(y > 5)
                 {
-                    playingBoard[currentSquare] = new BoardSquare(x,y,WhitePieces[whitePieceCounter]);
+                    playingBoard[x][y] = new BoardSquare(x,y,WhitePieces[whitePieceCounter]);
                     whitePieceCounter++;
                 }
                 else
                 {
-                    playingBoard[currentSquare] = new BoardSquare(x,y);
+                    playingBoard[x][y] = new BoardSquare(x,y);
                 }
-                currentSquare++;
             }
         }
     }
