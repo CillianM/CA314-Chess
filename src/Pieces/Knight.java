@@ -8,8 +8,13 @@ import java.util.ArrayList;
  */
 public class Knight implements ChessPiece {
     int id;
+    int type;
     public Knight(int id)
     {
+        if(id < 200)
+            type = 1;
+        else
+            type = 2;
         this.id = id;
     }
 

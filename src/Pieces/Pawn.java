@@ -10,8 +10,13 @@ public class Pawn implements ChessPiece {
 
     int moveCount = 0;
     int id;
+    int type;
     public Pawn(int id)
     {
+        if(id < 200)
+            type = 1;
+        else
+            type = 2;
         this.id = id;
     }
 

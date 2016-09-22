@@ -2,7 +2,7 @@ package Board;
 
 import Pieces.*;
 
-import java.awt.*;
+import java.awt.Point;
 import java.util.ArrayList;
 
 /**
@@ -12,8 +12,8 @@ public class ChessBoard {
 
 
     BoardSquare [][] playingBoard;
-    ChessPiece [] WhitePieces;
-    ChessPiece [] BlackPieces;
+    private ChessPiece [] WhitePieces;
+    private ChessPiece [] BlackPieces;
 
     public ChessBoard()
     {
@@ -23,7 +23,13 @@ public class ChessBoard {
 
     public ArrayList<Point> legalMoves(ArrayList<Point> moves)
     {
-        //TODO take in possible moves and return the possible moves that can be done
+        //TODO take in possible moves and return the possible moves that can be donepy
+        for(int i = 0; i < moves.size(); i++)
+        {
+            Point pt = moves.get(i);
+            if(pt.x > 7 || pt.x < 0 || pt.y > 7 || pt.y < 0)
+                moves.remove(i);
+        }
         return new ArrayList<Point>();
     }
 
@@ -39,7 +45,7 @@ public class ChessBoard {
         }
     }
 
-    public void constructBoard()
+    private void constructBoard()
     {
         constructPieces();
         int blackPieceCounter = 15;
@@ -67,7 +73,7 @@ public class ChessBoard {
     }
 
 
-    public void constructPieces()
+    private void constructPieces()
     {
         //TODO Construct rows 0,1 for white and 6,7 for black along with nulls for blanks
 

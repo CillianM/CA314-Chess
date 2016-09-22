@@ -9,8 +9,13 @@ import java.util.ArrayList;
 public class Queen implements ChessPiece{
 
     int id;
+    int type;
     public Queen(int id)
     {
+        if(id < 200)
+            type = 1;
+        else
+            type = 2;
         this.id = id;
     }
 

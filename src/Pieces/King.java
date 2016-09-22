@@ -10,8 +10,13 @@ public class King implements ChessPiece
 {
 
     int id;
+    int type;
     public King(int id)
     {
+        if(id < 200)
+            type = 1;
+        else
+            type = 2;
         this.id = id;
     }
 
